@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جدول الدروس – الخامس أ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f4;--card:#fff;--ink:#12303a;--mute:#5d7580;--line:#d5e1e5;--brand:#0f4c5c;--brand-ink:#fff;--hi:#f2a541;--hi-bg:#fff3de;--off:#e6edef;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a1f;--card:#16282f;--ink:#e6f0f2;--mute:#8ea8b1;--line:#27404a;--brand:#1d7287;--hi:#f2a541;--hi-bg:#3a2d17;--off:#1d3139}}
+:root[data-theme="dark"]{--bg:#0d1a1f;--card:#16282f;--ink:#e6f0f2;--mute:#8ea8b1;--line:#27404a;--brand:#1d7287;--hi:#f2a541;--hi-bg:#3a2d17;--off:#1d3139}
+*{box-sizing:border-box}
+:root{--g1:#d7eef2;--g2:#fbe8cc;--g3:#d6e2fa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#0b1a20;--g2:#1a2a22;--g3:#131d35}}
+:root[data-theme="dark"]{--g1:#0b1a20;--g2:#1a2a22;--g3:#131d35}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:linear-gradient(120deg,var(--g1),var(--g2),var(--g3),var(--g1));background-size:300% 300%;animation:bg 20s ease infinite;color:var(--ink);font-family:Cairo,Tahoma,"Segoe UI",sans-serif;line-height:1.6}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:20px 16px 32px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
+h1{font-size:1.25rem;font-weight:800;margin:0}
+#clock{color:var(--mute);font-size:.9rem}
+.day{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:18px}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.day.today{border:4px solid transparent;border-radius:20px;background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--a),#f2a541,#1d9bb0,#6b8cff,#f2a541) border-box;animation:spin 4s linear infinite;box-shadow:0 0 28px rgba(242,165,65,.4)}
+.day:not(.today){opacity:.92}
+.day-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--brand);color:var(--brand-ink)}
+.day:not(.today) .day-head{background:var(--off);color:var(--ink)}
+.day-name{font-size:1.6rem;font-weight:800}
+.day:not(.today) .day-name{font-size:1.15rem;font-weight:600}
+.tag{font-size:.85rem;padding:2px 12px;border-radius:99px;background:rgba(255,255,255,.2)}
+.day:not(.today) .tag{background:var(--line)}
+.row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:11px 18px;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.n{width:30px;height:30px;border-radius:50%;background:var(--off);display:grid;place-items:center;font-weight:600;font-size:.9rem}
+.sub{font-weight:600;font-size:1.05rem}
+.sub small{display:block;font-weight:400;color:var(--mute);font-size:.82rem}
+.time{color:var(--mute);font-size:.82rem;direction:ltr;text-align:left}
+.row.now{background:var(--hi-bg);box-shadow:inset -5px 0 0 var(--hi)}
+.row.now .n{background:var(--hi);color:#2a1c05}
+.row.past{opacity:.5}
+.row.empty .sub{color:var(--mute);font-weight:400}
+.brk{padding:5px 18px;text-align:center;font-size:.8rem;color:var(--mute);background:var(--off);border-top:1px solid var(--line)}
+.holiday{padding:34px 18px;text-align:center;color:var(--mute);font-size:1.05rem}
+footer{text-align:center;color:var(--mute);font-size:.8rem;margin-top:8px}
+.orbs{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.orbs i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:float 14s ease-in-out infinite alternate}
+.orbs i:nth-child(1){width:280px;height:280px;background:#f2a541;top:-60px;right:-60px}
+.orbs i:nth-child(2){width:320px;height:320px;background:#1d9bb0;bottom:-80px;left:-80px;animation-duration:18s}
+.orbs i:nth-child(3){width:220px;height:220px;background:#6b8cff;top:45%;left:30%;opacity:.3;animation-duration:22s}
+@keyframes float{to{transform:translate(40px,60px) scale(1.2)}}
+@keyframes bg{50%{background-position:100% 50%}}
+@keyframes spin{to{--a:360deg}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media print{body{background:#fff;animation:none}.orbs{display:none}.day{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="orbs"><i></i><i></i><i></i></div>
+<main>
+<header><h1>جدول الدروس – الخامس أ</h1><span id="clock"></span></header>
+<section id="today"></section>
+<section id="next"></section>
+<footer>الدوام من الأحد إلى الخميس. الجمعة والسبت عطلة.</footer>
+</main>
+<script>
+var DAYS=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+var T=[["08:00","08:45"],["08:50","09:35"],["09:40","10:25"],["10:45","11:30"],["11:35","12:20"],["12:25","13:10"]];
+var S=[
+[["رياضيات","أحمد"],["فيزياء","أكرم"],["اللغة الإنجليزية","علي جمعة"],["عربي","سجاد"],["إسلامية","عباس"],["كيمياء","ستار"]],
+[["أحياء","عمار"],["رياضيات","أحمد"],["إسلامية","عباس"],["فيزياء","أكرم"],["اللغة الإنجليزية","علي جمعة"],["الفنية",""]],
+[["فيزياء","أكرم"],["رياضة","علي"],["حاسوب","زينب"],["اللغة الإنجليزية","علي جمعة"],["عربي","سجاد"],["رياضيات","أحمد"]],
+[["عربي","سجاد"],["اللغة الإنجليزية","علي جمعة"],["رياضيات","أحمد"],["حاسوب","زينب"],["كيمياء","ستار"],["أحياء","عمار"]],
+[["كيمياء","ستار"],["اللغة الإنجليزية","علي جمعة"],["أحياء","عمار"],["عربي","سجاد"],["رياضيات","أحمد"],null]
+];
+function mins(t){var p=t.split(":");return +p[0]*60+ +p[1]}
+function nextSchool(d){d=(d+1)%7;return d>4?0:d}
+function card(d,isToday,now,label){
+ var h='<div class="day'+(isToday?' today':'')+'"><div class="day-head"><span class="day-name">'+DAYS[d]+'</span><span class="tag">'+label+'</span></div>';
+ if(d>4){return h+'<div class="holiday">عطلة نهاية الأسبوع، لا توجد دروس</div></div>'}
+ S[d].forEach(function(p,i){
+  
+  var cls='row',s=mins(T[i][0]),e=mins(T[i][1]);
+  if(!p)cls+=' empty';
+  if(isToday&&now!==null){if(now>=s&&now<e)cls+=' now';else if(now>=e)cls+=' past'}
+  h+='<div class="'+cls+'"><span class="n">'+(i+1)+'</span><span class="sub">'+(p?p[0]+(p[1]?'<small>'+p[1]+'</small>':''):'لا توجد حصة')+'</span><span class="time">'+T[i][0]+' – '+T[i][1]+'</span></div>';
+ });
+ return h+'</div>';
+}
+function render(){
+ var n=new Date(),d=n.getDay(),now=n.getHours()*60+n.getMinutes();
+ var after=now>=780,lab='اليوم';
+ if(after){d=(d+1)%7;lab='غدًا';now=null}
+ var nd=nextSchool(d);
+ var nl=nd==(d+1)%7?(after?'بعد غد':'غدًا'):'الأحد القادم';
+ document.getElementById('today').innerHTML=card(d,true,now,lab);
+ document.getElementById('next').innerHTML=card(nd,false,null,nl);
+ document.getElementById('clock').textContent=n.toLocaleDateString('ar-IQ',{day:'numeric',month:'long',year:'numeric'});
+}
+render();setInterval(render,60000);
+</script>
+</body>
+</html>
